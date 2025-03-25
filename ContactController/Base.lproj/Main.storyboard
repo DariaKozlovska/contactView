@@ -1,24 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ContactController" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PaY-TU-X64">
+                                <rect key="frame" x="0.0" y="417" width="393" height="401"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="401" id="ZSt-Gs-QTH"/>
+                                </constraints>
+                                <string key="text">Jan Kowalski
+tel: +48 600 600 600
+homepage: ww.apple.com
+e:mail : xyz@google.pl
+ul. Fabryczna, Wrocław</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgH-Gy-4Hk">
+                                <rect key="frame" x="155" y="73" width="83" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" misplaced="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="r8C-Nx-1K9">
+                                <rect key="frame" x="76" y="142" width="241" height="242"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PaY-TU-X64" firstAttribute="top" secondItem="r8C-Nx-1K9" secondAttribute="bottom" constant="33" id="2lI-Ou-YJE"/>
+                            <constraint firstItem="ZgH-Gy-4Hk" firstAttribute="centerX" secondItem="PaY-TU-X64" secondAttribute="centerX" id="FbK-gz-OHQ"/>
+                            <constraint firstItem="ZgH-Gy-4Hk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="I9w-1G-gLc"/>
+                            <constraint firstItem="r8C-Nx-1K9" firstAttribute="top" secondItem="ZgH-Gy-4Hk" secondAttribute="bottom" constant="34" id="OL0-lZ-LuB"/>
+                            <constraint firstItem="PaY-TU-X64" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="PTI-ls-hgA"/>
+                            <constraint firstItem="PaY-TU-X64" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="R9N-JS-LbV"/>
+                            <constraint firstItem="r8C-Nx-1K9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="76" id="hMM-wf-6Un"/>
+                            <constraint firstItem="ZgH-Gy-4Hk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="myP-lh-VmH"/>
+                            <constraint firstItem="r8C-Nx-1K9" firstAttribute="centerX" secondItem="ZgH-Gy-4Hk" secondAttribute="centerX" id="rli-CS-a0Y"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="profileImage" destination="r8C-Nx-1K9" id="iKE-wp-7V9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="35.877862595419849" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Image" width="3830" height="5745"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
